@@ -1,12 +1,29 @@
 ## Telecom Churn Analytics PoC
 
-React + Python dashboard for analyzing telecom customer churn across 500K Indian customers.
+A consulting-grade, full-stack churn analytics platform built for a simulated Indian telecom market (Jio/Airtel/Vi product structures). Trained a multiclass XGBoost/Random Forest classifier on a synthesized 500K-row dataset with 45 features, then surfaced insights through a 7-page React dashboard with AI-powered strategic recommendations.
 
-### Architecture
-- **Scripts** (run once): Generate data → Train model → Precompute dashboard JSONs
-- **Backend** (FastAPI): AI-only endpoints (Gemini streaming)
-- **Frontend** (React + Vite): Static JSON data + AI chat
+Built as part of an AI/ML internship at Virtusa.
 
+### What it does
+- **Churn prediction** — Multiclass classifier optimized for macro F1, trained on realistic Indian telecom data with features like plan type, ARPU, data usage, and regional market share
+- **Consulting dashboard** — 7-page React interface covering customer segmentation, retention ROI planning, bundle upsell analysis, and seasonal churn risk modeling
+- **AI chatbot** — Context-aware Gemini chatbot that streams real-time strategic retention advice per segment
+- **Hotspot recommendations** — Clickable regional hotspot system highlighting high-churn segments with actionable recommendations
+- **Decoupled architecture** — Full data pipeline precomputed into static JSONs; backend only handles AI endpoints, keeping the dashboard fast and backend-free for most interactions
+
+
+![Overview Dashboard Screenshot](/readme_images/overview.png)
+*Overview Dashboard*
+
+![Retention Planner Screenshot](/readme_images/retention_planner_ss.png)
+*Retention Planner*
+
+![AI Hotspot Recommendation Screenshot](/readme_images/ai_hotspot_rec_segmentbleeding.png)
+*AI Hotspot Recommendation*
+
+
+### Tech Stack
+`XGBoost` `scikit-learn` `SHAP` `pandas` `FastAPI` `Google Gemini API` `React` `Vite` `Python`
 ---
 
 ## Setup & Run Order
